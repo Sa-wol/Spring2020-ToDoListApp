@@ -8,11 +8,14 @@ var ToDoItem = (function () {
 window.onload = function () {
     var addItem = document.getElementById("add");
     addItem.onclick = main;
-    loadSavedItem();
+    loadSavedItems();
 };
-function loadSavedItem() {
-    var item = getToDo();
-    displayToDoItem(item);
+function loadSavedItems() {
+    var itemArray = getToDoItems();
+    for (var i = 0; i < itemArray.length; i++) {
+        var currItem = itemArray[i];
+        displayToDoItem(currItem);
+    }
 }
 function main() {
     if (isValid()) {
@@ -62,16 +65,23 @@ function displayToDoItem(item) {
 }
 function markAsComplete() {
     var itemDiv = this;
+    console.log(itemDiv);
     itemDiv.classList.add("completed");
-    var completedItems = document.getElementById("completed-items");
+    var completedItems = document.getElementById("complete-items");
+    console.log(completedItems);
     completedItems.appendChild(itemDiv);
 }
 function saveToDo(item) {
-    var itemString = JSON.stringify(item);
-    localStorage.setItem("todo", itemString);
+    var currItems = getToDoItems();
+    if (currItems == null) {
+        currItems = new Array();
+    }
+    currItems.push(item);
+    var currItemsString = JSON.stringify(currItems);
+    localStorage.setItem(todokey, currItemsString);
 }
 var todokey = "todo";
-function getToDo() {
+function getToDoItems() {
     var itemString = localStorage.getItem("todo");
     var item = JSON.parse(itemString);
     return item;
