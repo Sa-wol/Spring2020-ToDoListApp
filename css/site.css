@@ -1,13 +1,33 @@
+
+body{
+    background-color: lightgoldenrodyellow;
+}
+
+h1{
+    text-align: center;
+    width: 100%;
+    background-color: lightgoldenrodyellow;
+    color: rgb(95, 91, 91);
+}
+
+h3{
+    margin-top: 10%;
+}
+
+h3, h5{
+    text-align: center;
+    width: 100%;
+}
+
 .todo{
-    width: 20%;
+    width: 40%;
     box-sizing: border-box;
-    background-color: lightblue;
+    background-color: plum;
     padding: .5em;
     border-radius: .75em;
     margin: 1em;
     cursor: pointer;
 }
-
 .todo h3{
     margin: 0px;
 }
@@ -15,22 +35,52 @@
 .todo p{
     margin: 0px;
 }
-
 .completed{
     opacity: 35%;
-    background-color: lightgreen;
+    background-color: rgb(139, 139, 139);
     text-decoration: line-through;
 }
 
+#add{
+    background-color: rgb(226, 226, 174);
+    width: 200px;
+    height: 50px;
+    margin-top: 15%;
+    font-size: large;
+}
+
+#title, #due-date{
+    margin-left: 5%;
+    margin-top: 10%;
+    height: 30%;
+}
+
+#adding-todo{
+    float: left;
+    margin: 10% 10% 10% 10%;
+}
+
+#todo-tasks{
+    margin-left: 40%;
+}
+
+#is-complete{
+    margin: 10% 0% 0% 0%;
+    text-align: center;
+}
+
 #complete-items{
-    border: .2em solid blue;
-    width: 50%;
+    border: .1em dotted rgb(112, 112, 112);
+    background-color: rgb(226, 226, 226);
+    margin-bottom: 1em;
+    color: rgb(17, 22, 18);
 }
 
 #incomplete-items{
-    border: .1em solid black;
+    border: .1em solid palevioletred;
+    background-color: lavenderblush;
     margin-bottom: 1em;
-    width: 50%;
+    color:darkmagenta;
 }
 
 #complete-items, 
